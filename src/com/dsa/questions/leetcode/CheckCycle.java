@@ -1,7 +1,6 @@
-//Leetcode-141
+package com.dsa.questions.leetcode;
 
-import java.io.*;
-import java.util.*;
+//Leetcode-141
 
 public class CheckCycle {
     static class Node{
@@ -32,31 +31,16 @@ public class CheckCycle {
         return toAdd;
     }
 
-    public static void traverse(Node head){
-        Node temp = head;
-        while(temp != null){
-            System.out.print(temp.data + " ");
-            temp = temp.next;
-        }
-        System.out.println();
-    }
-
-    public static Node checkCycle(Node head) {
+    public static Boolean checkCycle(Node head) {
         Node slow_ptr = head, fast_ptr = head;
         while(fast_ptr != null && fast_ptr.next != null){
             slow_ptr = slow_ptr.next;
             fast_ptr = fast_ptr.next.next;
 
-            if(slow_ptr == fast_ptr) {;
-                slow_ptr = head;
-                while(slow_ptr != fast_ptr){
-                    slow_ptr = slow_ptr.next;
-                    fast_ptr = fast_ptr.next;
-                }
-                return slow_ptr;
-            }
+            if(slow_ptr == fast_ptr)
+                return true;
         }
-        return null;
+        return false;
     }
 
     public static void main(String[] args) {
@@ -66,7 +50,6 @@ public class CheckCycle {
         head.next.next.next = insert(4);
         head.next.next.next.next = insert(5);
         head.next.next.next.next.next = head.next.next;
-        System.out.println((checkCycle(head)).data);
-        
+        System.out.println(checkCycle(head));
     }
 }

@@ -1,5 +1,7 @@
-import java.io.*;
-import java.util.*;
+package com.dsa.questions;
+
+import java.util.Arrays;
+import java.util.Stack;
 
 public class NextSmallest {
     public static int[] nextSmallest(int[] nums){

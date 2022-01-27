@@ -1,5 +1,10 @@
-import java.io.*;
-import java.util.*;
+package com.dsa.questions.leetcode;
+
+//Leetcode-56
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class MergeIntervals {
     public static int[][] merge(int[][] intervals) {

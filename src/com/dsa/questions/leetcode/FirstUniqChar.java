@@ -1,7 +1,9 @@
+package com.dsa.questions.leetcode;
+
 //Leetcode-387
 
-import java.io.*;
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 public class FirstUniqChar {
     public static int firstUniqChar(String s){

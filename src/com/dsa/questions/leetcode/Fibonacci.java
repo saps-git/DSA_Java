@@ -1,7 +1,6 @@
-//Leetcode-509
+package com.dsa.questions.leetcode;
 
-import java.io.*;
-import java.util.*;
+//Leetcode-509
 
 public class Fibonacci {
 	private static int fibonacci(int n){

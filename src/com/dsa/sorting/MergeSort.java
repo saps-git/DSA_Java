@@ -1,5 +1,4 @@
-import java.io.*;
-import java.util.*;
+package com.dsa.sorting;
 
 public class MergeSort {
 	public static void main(String[] args) {

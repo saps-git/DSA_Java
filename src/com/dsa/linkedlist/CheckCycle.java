@@ -1,7 +1,5 @@
 package com.dsa.linkedlist;
 
-//Leetcode-141
-
 public class CheckCycle {
     static class Node{
         int data;

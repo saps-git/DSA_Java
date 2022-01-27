@@ -1,7 +1,6 @@
-//Leetcode-704
+package com.dsa.questions.leetcode;
 
-import java.io.*;
-import java.util.*;
+//Leetcode-704
 
 public class BinarySearch {
 	public static int binarySearch(int[] nums, int target){

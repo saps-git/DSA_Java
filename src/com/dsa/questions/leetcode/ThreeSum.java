@@ -1,7 +1,10 @@
+package com.dsa.questions.leetcode;
+
 //Leetcode-15
 
-import java.io.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class ThreeSum {
     public static List<List<Integer>> threeSum(int[] nums) {

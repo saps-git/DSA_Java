@@ -1,7 +1,9 @@
+package com.dsa.questions.leetcode;
+
 // Leetcode-1
 
-import java.io.*;
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 public class TwoSum {
     public static int[] twoSum(int[] nums, int target) {

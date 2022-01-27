@@ -1,5 +1,4 @@
-import java.io.*;
-import java.util.*;
+package com.dsa.sorting;
 
 public class BubbleSort {
     public static void swap(int arr[], int i, int j){

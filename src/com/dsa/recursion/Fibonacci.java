@@ -9,7 +9,7 @@ public class Fibonacci {
 		return fibonacciNonOpt(n-1) + fibonacciNonOpt(n-2); 
 	}
 	
-	//NOTE: needs to be done later
+	//TODO: needs to be done later
 //	public static int fibonacciOpt(int n, HashMap<Integer, Integer> mp){
 //
 //	}

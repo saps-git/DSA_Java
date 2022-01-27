@@ -1,5 +1,9 @@
-import java.io.*;
-import java.util.*;
+package com.dsa.questions.leetcode;
+
+//Leetcode-1823
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Josephus {
     public static int josephus(List<Integer> arr, int n, int k, int index){

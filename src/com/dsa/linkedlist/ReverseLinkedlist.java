@@ -1,7 +1,5 @@
 package com.dsa.linkedlist;
 
-//Leetcode-206
-
 public class ReverseLinkedlist {
     static class Node{
         int data;

@@ -1,7 +1,6 @@
-//Leetcode-206
+package com.dsa.questions.leetcode;
 
-import java.io.*;
-import java.util.*;
+//Leetcode-206
 
 public class ReverseLinklist {
     static class Node{
