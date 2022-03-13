@@ -27,7 +27,8 @@ public class FindMountainArr {
     }
     public static int findPeak(int[] nums){
         int start = 0, end = nums.length-1;
-        while(start < end) {
+        while(start < end) { //not start <= end, because we are not doing anything with the mid element, hence infinite loop
+            //and we want to return the end value
             int mid = start + (end-start)/2;
             if(nums[mid] > nums[mid+1]) end = mid;
             else if(nums[mid] < nums[mid+1]) start = mid+1;
