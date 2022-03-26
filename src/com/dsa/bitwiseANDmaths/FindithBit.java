@@ -1,4 +1,4 @@
-package com.dsa.bitwise;
+package com.dsa.bitwiseANDmaths;
 
 public class FindithBit {
     public static int ithBit(int num, int i) {

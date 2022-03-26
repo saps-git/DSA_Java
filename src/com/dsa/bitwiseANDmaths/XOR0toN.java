@@ -1,4 +1,4 @@
-package com.dsa.bitwise;
+package com.dsa.bitwiseANDmaths;
 
 //Answer repeats in the same cycle after every 4 numbers, write on your own and check
 public class XOR0toN {

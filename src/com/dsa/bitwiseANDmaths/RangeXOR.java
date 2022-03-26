@@ -1,4 +1,4 @@
-package com.dsa.bitwise;
+package com.dsa.bitwiseANDmaths;
 
 public class RangeXOR {
     public static int xor(int n) {

@@ -1,4 +1,4 @@
-package com.dsa.bitwise;
+package com.dsa.bitwiseANDmaths;
 
 public class OddEven {
     public static boolean isOdd(int num) {

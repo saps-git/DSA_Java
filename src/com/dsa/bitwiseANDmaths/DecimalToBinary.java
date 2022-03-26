@@ -1,4 +1,4 @@
-package com.dsa.bitwise;
+package com.dsa.bitwiseANDmaths;
 
 public class DecimalToBinary {
     public static int decimalToBinary(int n) {
