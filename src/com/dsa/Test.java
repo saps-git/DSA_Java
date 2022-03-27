@@ -1,8 +1,11 @@
 package com.dsa;
 
 public class Test {
+    //Passing an argument
     public static void main(String[] args) {
-        int n = 5;
-        System.out.println(~n);
+        System.out.println("");
+    }
+    public static String palindrome(String str) {
+        return "0";
     }
 }

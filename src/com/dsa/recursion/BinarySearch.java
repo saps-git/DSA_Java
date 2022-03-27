@@ -5,7 +5,7 @@ public class BinarySearch {
 		if(left > right) return -1;
 
 		//int mid = (left + right)/2;
-		int mid = left + (right-left)/2; //same as above, but (left+right)/2 could gˀive exceed the int value, in case
+		int mid = left + (right-left)/2; //same as above, but (left+right)/2 could give exceed the int value, in case
 		// of addition of very large numbers, hence this formula
 		if(target == nums[mid]) return mid;
 		if(target < nums[mid]) return binarySearch(nums, target, left, mid-1);
