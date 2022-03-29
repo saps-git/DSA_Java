@@ -11,7 +11,7 @@ public class BubbleSort {
     }
     public static void main(String[] args) {
         int arr[] = {13,45,2,6,78,10};
-        for(int i=0;i<arr.length;i++){ //passing for every element of the array
+        for(int i=0;i<arr.length;i++){ //total no. of cycles = total no. of element in the array, hence looping till arr.length
             for(int j=1;j<arr.length-i;j++){ //comparing every element with it's previous, till length-i
                 // (because element in the last is sorted in the previous pass
                 if(arr[j] < arr[j-1])
