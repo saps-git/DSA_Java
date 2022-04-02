@@ -22,10 +22,10 @@ public class PermutationOfString {
         }
 
         char ch = str.charAt(index);
-        for(int i=0;i<=ans.length();i++) {
-            String firstHalf = ans.substring(0, i);
-            String secondHalf = ans.substring(i, ans.length());
-            permutations(str, firstHalf+ch+secondHalf, index+1);
+        for(int i=0;i<=ans.length();i++) { //there will always be n+1 places to be filled if there are n elements already
+            String firstHalf = ans.substring(0, i); //we will take two halves, first
+            String secondHalf = ans.substring(i, ans.length()); // and second
+            permutations(str, firstHalf+ch+secondHalf, index+1); //and then add the char in b/w
         }
     }
     /*public static ArrayList<String> permutations2(String str, String ans, int index) {
