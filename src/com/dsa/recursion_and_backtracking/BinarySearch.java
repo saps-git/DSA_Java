@@ -1,4 +1,4 @@
-package com.dsa.recursion;
+package com.dsa.recursion_and_backtracking;
 
 public class BinarySearch {
 	public static int binarySearch(int[] nums, int target, int left, int right){

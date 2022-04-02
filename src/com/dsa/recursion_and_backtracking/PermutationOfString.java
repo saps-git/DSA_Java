@@ -1,4 +1,4 @@
-package com.dsa.recursion;
+package com.dsa.recursion_and_backtracking;
 
 //Much like power-set question
 //On every recursive call, we make as many subsequent recursive calls as,
@@ -6,8 +6,6 @@ package com.dsa.recursion;
 // in which, we add an element from given string(str), to all the possible positions in the answer string(ans),
 // finally when the given string is empty(i == str.length()), we print the answer string,
 // as it now contains a valid permutation.
-
-import java.util.ArrayList;
 
 public class PermutationOfString {
     public static void main(String[] args) {

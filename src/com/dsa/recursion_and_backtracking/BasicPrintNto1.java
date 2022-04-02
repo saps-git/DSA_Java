@@ -1,4 +1,4 @@
-package com.dsa.recursion;
+package com.dsa.recursion_and_backtracking;
 
 public class BasicPrintNto1 {
     public static void main(String[] args) {

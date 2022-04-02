@@ -1,4 +1,4 @@
-package com.dsa.recursion;
+package com.dsa.recursion_and_backtracking;
 
 public class SumofN {
 	public static int sumOfNnoob(int num, int ans){

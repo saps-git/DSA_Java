@@ -1,4 +1,4 @@
-package com.dsa.recursion;
+package com.dsa.recursion_and_backtracking;
 
 public class RotatedBinarySearch {
     public static int helper(int[] nums, int target, int start, int end) {

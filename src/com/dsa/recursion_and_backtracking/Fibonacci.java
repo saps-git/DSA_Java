@@ -1,6 +1,4 @@
-package com.dsa.recursion;
-
-import java.util.HashMap;
+package com.dsa.recursion_and_backtracking;
 
 public class Fibonacci {
 	public static int fibonacciNonOpt(int n){

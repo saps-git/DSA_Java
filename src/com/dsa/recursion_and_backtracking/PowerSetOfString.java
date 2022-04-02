@@ -1,13 +1,10 @@
-package com.dsa.recursion;
+package com.dsa.recursion_and_backtracking;
 
 //On every recursive call, we make two subsequent recursive calls,
 // one in which, we add an element from given string(str), to the answer string(ans),
 // second in which, we do NOT add an element from given string(str), to the answer string(ans),
 // finally when the given string is empty(i == str.length()), we print the answer string,
 // as it now contains a valid subsequence.
-
-import java.util.ArrayList;
-import java.util.Arrays;
 
 //O(2^n)
 public class PowerSetOfString {

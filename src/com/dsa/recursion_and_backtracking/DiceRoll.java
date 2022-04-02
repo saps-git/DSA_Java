@@ -1,4 +1,4 @@
-package com.dsa.recursion;
+package com.dsa.recursion_and_backtracking;
 
 //Rolling a(single) dice, return the possible outcomes that add unto the target
 

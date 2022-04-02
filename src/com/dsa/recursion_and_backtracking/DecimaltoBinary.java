@@ -1,4 +1,4 @@
-package com.dsa.recursion;
+package com.dsa.recursion_and_backtracking;
 
 public class DecimaltoBinary {
 	public static String toBinarynoob(int num, String result){
