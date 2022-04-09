@@ -88,6 +88,7 @@ public class LL {
         if(size == 2) {
             int ans = head.next.data;
             head.next = null;
+            size -= 1;
             return ans;
         }
         Node temp = head;
@@ -98,6 +99,41 @@ public class LL {
         temp.next = null;
         size -= 1;
         return val;
+    }
+
+    public int deletePos(int pos) {
+        if(pos > size) return -1;
+        if(pos == 0) return deleteFirst();
+        if(pos == size) return deleteLast();
+        Node temp = head;
+        while(pos != 1) {
+            temp = temp.next;
+            pos--;
+        }
+
+        int val = temp.next.data;
+        temp.next = temp.next.next;
+        size -= 1;
+        return val;
+    }
+
+    public Node find(int val) {
+        Node temp = head;
+        while(temp != null) {
+            if(temp.data == val) return temp;
+            else temp = temp.next;
+        }
+        return null;
+    }
+
+    public Node get(int pos) {
+        Node temp = head;
+        while(pos != 0) {
+            temp = temp.next;
+            pos--;
+        }
+
+        return temp;
     }
 
     public void display() {
@@ -120,9 +156,13 @@ public class LL {
 
         linkedList.insertAtPos(15,1);
         linkedList.display();
-
-        System.out.println(linkedList.deleteFirst());
-        System.out.println(linkedList.deleteLast());
+        System.out.println(linkedList.find(10));
+//        System.out.println(linkedList.get(2).data);
+//
+//        System.out.println(linkedList.deleteFirst());
+//        System.out.println(linkedList.deleteLast());
+//        System.out.println(linkedList.deletePos(3));
+//        linkedList.display();
 
     }
 }
