@@ -50,11 +50,12 @@ public class LLTemplate {
 
     public static void main(String[] args) {
         LLTemplate linkedList = new LLTemplate();
-        linkedList.insert(1);
-        linkedList.insert(2);
+        linkedList.insert(-1);
+        linkedList.insert(5);
+        linkedList.insert(3);
         linkedList.insert(4);
-        linkedList.insert(3);
-        linkedList.insert(3);
+        linkedList.insert(6);
+        linkedList.insert(0);
 
         linkedList.display();
     }

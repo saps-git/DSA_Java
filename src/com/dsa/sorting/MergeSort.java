@@ -78,7 +78,7 @@ public class MergeSort {
 
 		int mid = nums.length/2; //finding the mid to divide it into half
 		int[] left = mergeSort(Arrays.copyOfRange(nums, 0, mid)); //Arrays.copyOfRange(), will return a new
-		int[] right = mergeSort(Arrays.copyOfRange(nums, mid, nums.length)); //sub array, int the given range
+		int[] right = mergeSort(Arrays.copyOfRange(nums, mid, nums.length)); //sub array, in the given range
 		return merge(left, right); //the two sub arrays will now be merged in sorted way
 	}
 	public static void main(String[] args) {
