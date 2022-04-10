@@ -1,8 +1,10 @@
 package com.dsa.linkedlist;
 
-public class Linkedlist {
+public class LLTemplate2 {
+    private static Node head;
+    public LLTemplate2() {this.head = null;}
 
-    static class Node{
+    private class Node{
         int data;
         Node next;
 
@@ -10,10 +12,8 @@ public class Linkedlist {
             this.data = data;
         }
     }
-    
-    static Node head;
 
-    public static Node insert(int data){
+    public Node insert(int data){
         Node toAdd = new Node(data);
         toAdd.next = null;
 
@@ -30,24 +30,25 @@ public class Linkedlist {
         return toAdd;
     }
 
-    public static void traverse(Node head){
+    public void traverse(){
         Node temp = head;
         while(temp != null){
-            System.out.print(temp.data + " ");
+            System.out.print(temp.data + "->");
             temp = temp.next;
         }
+        System.out.print("END");
         System.out.println();
     }
 
 
     public static void main(String[] args) {
-        head = insert(1);
-        head.next = insert(2);
-        head.next.next = insert(3);
-        head.next.next.next = insert(4);
-        head.next.next.next.next = insert(5);
-        head.next.next.next.next.next = insert(6);
-        traverse(head); 
+        LLTemplate2 ll = new LLTemplate2();
+        head = ll.insert(1);
+        head.next = ll.insert(2);
+        head.next.next = ll.insert(3);
+        head.next.next.next = ll.insert(4);
+        head.next.next.next.next = ll.insert(5);
+        head.next.next.next.next.next = ll.insert(6);
     }
 }
 

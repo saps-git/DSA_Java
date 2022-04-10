@@ -1,7 +1,10 @@
 package com.dsa.linkedlist;
 
 public class CheckCycle {
-    static class Node{
+    private static Node head;
+    public CheckCycle() {this.head = null;}
+
+    private class Node{
         int data;
         Node next;
 
@@ -9,10 +12,8 @@ public class CheckCycle {
             this.data = data;
         }
     }
-    
-    static Node head;
 
-    public static Node insert(int data){
+    public Node insert(int data){
         Node toAdd = new Node(data);
         toAdd.next = null;
 
@@ -20,7 +21,7 @@ public class CheckCycle {
 
         else{
             Node temp = head;
-            while(temp.next != null) 
+            while(temp.next != null)
                 temp = temp.next;
 
             temp.next = toAdd;
@@ -29,41 +30,70 @@ public class CheckCycle {
         return toAdd;
     }
 
-    public static void traverse(Node head){
-        Node temp = head;
-        while(temp != null){
-            System.out.print(temp.data + " ");
-            temp = temp.next;
+    public boolean hasCycle() {
+        Node fast = head, slow = head;
+        while(fast != null && fast.next != null) { //because in case there is no cycle fast will reach to the end first,
+            //hence we check if fast is null, also we check if fast.next is null because we gonna skip two at a time for
+            //fast pointer, hence to avoid NPE.
+            slow = slow.next;
+            fast = fast.next.next;
+
+            if(slow == fast) return true;
         }
-        System.out.println();
+        return false;
     }
 
-    public static Node checkCycle(Node head) {
-        Node slow_ptr = head, fast_ptr = head;
-        while(fast_ptr != null && fast_ptr.next != null){
-            slow_ptr = slow_ptr.next;
-            fast_ptr = fast_ptr.next.next;
+    public static int lengthOfCycle() {
+        Node fast = head, slow = head;
+        while(fast != null && fast.next != null) { 
+            slow = slow.next;
+            fast = fast.next.next;
 
-            if(slow_ptr == fast_ptr) {;
-                slow_ptr = head;
-                while(slow_ptr != fast_ptr){
-                    slow_ptr = slow_ptr.next;
-                    fast_ptr = fast_ptr.next;
+            if(slow == fast) {
+                int size = 0;
+                do{
+                    slow = slow.next;
+                    size += 1;
+                } while(slow != fast);
+                return size;
+            }
+        }
+        return 0;
+    }
+
+    public static Node startPoint() {
+        Node fast = head, slow = head;
+        while(fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+
+            if(slow == fast) {
+                slow = head;
+                while(slow != fast) {
+                    slow = slow.next;
+                    fast = fast.next;
                 }
-                return slow_ptr;
+                return slow;
             }
         }
         return null;
     }
 
     public static void main(String[] args) {
-        head = insert(1);
-        head.next = insert(2);
-        head.next.next = insert(3);
-        head.next.next.next = insert(4);
-        head.next.next.next.next = insert(5);
-        head.next.next.next.next.next = head.next.next;
-        System.out.println((checkCycle(head)).data);
-        
+        CheckCycle ll = new CheckCycle();
+        head = ll.insert(1);
+        head.next = ll.insert(2);
+        head.next.next = ll.insert(3);
+        head.next.next.next = ll.insert(4);
+        head.next.next.next.next = ll.insert(5);
+        head.next.next.next.next.next = ll.insert(6);
+        head.next.next.next.next.next.next = head.next.next; //adding after 3
+        System.out.println(ll.hasCycle());
+        if(ll.hasCycle()) {
+            System.out.println("Cycle present");
+            System.out.println("length of cycle " + lengthOfCycle());
+            System.out.println("Starting at node " + startPoint().data);
+        } else System.out.println("No Cycle present");
     }
 }
+

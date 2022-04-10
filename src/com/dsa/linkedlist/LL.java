@@ -2,7 +2,6 @@ package com.dsa.linkedlist;
 
 public class LL {
     private Node head;
-    private Node tail;
     private int size;
 
     public LL() {this.size = 0;}
@@ -14,11 +13,6 @@ public class LL {
         public Node(int data) {
             this.data = data;
         }
-        
-        public Node(int data, Node next) {
-            this.data = data;
-            this.next = next;
-        }
     }
     
     public void insertFirst(int data) {
@@ -26,24 +20,10 @@ public class LL {
         node.next = head;
         head = node;
         
-        if(tail == null) node = head;
-        
-        size += 1;
-    }
-    
-    public void insertLast(int data) { //insert at the end with tail pointer
-        if(tail == null) {
-            insertFirst(data);
-            return;
-        }
-
-        Node node = new Node(data);
-        tail.next = node;
-        tail = node;
         size += 1;
     }
 
-    public void insert(int data) { //inseret at the end without tail
+    public void insert(int data) {
         Node node = new Node(data);
         node.next = null;
         if(head == null) {
@@ -156,7 +136,7 @@ public class LL {
 
         linkedList.insertAtPos(15,1);
         linkedList.display();
-        System.out.println(linkedList.find(10));
+//        System.out.println(linkedList.find(10));
 //        System.out.println(linkedList.get(2).data);
 //
 //        System.out.println(linkedList.deleteFirst());
