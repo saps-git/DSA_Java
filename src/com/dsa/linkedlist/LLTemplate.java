@@ -38,6 +38,41 @@ public class LLTemplate {
         size += 1;
     }
 
+    public void reorderList() {
+        Node mid = getMid(head);
+        Node hs = reverse(mid);
+        Node hf = head;
+        while(hf != null && hs != null) {
+            Node temp = hf.next;
+            hf.next = hs;
+            hf = temp;
+            temp = hs.next;
+            hs.next = hf;
+            hs = temp;
+        }
+        if(hf != null) hf.next = null;
+    }
+    public Node getMid(Node node) {
+        Node slow = node, fast = node;
+        while(fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+        }
+        return slow;
+    }
+    public Node reverse(Node node) {
+        Node curr = node;
+        Node prev = null;
+        while(curr.next != null) {
+            curr = curr.next;
+            node.next = prev;
+            prev = node;
+            node = curr;
+        }
+
+        curr.next = prev;
+        return node;
+    }
     public void display() {
         Node temp = head;
         while(temp != null) {
@@ -50,13 +85,16 @@ public class LLTemplate {
 
     public static void main(String[] args) {
         LLTemplate linkedList = new LLTemplate();
-        linkedList.insert(-1);
-        linkedList.insert(5);
+        linkedList.insert(1);
+        linkedList.insert(2);
         linkedList.insert(3);
         linkedList.insert(4);
-        linkedList.insert(6);
-        linkedList.insert(0);
+        linkedList.insert(5);
+        //linkedList.insert(1);
 
         linkedList.display();
+        linkedList.reorderList();
+        linkedList.display();
+
     }
 }

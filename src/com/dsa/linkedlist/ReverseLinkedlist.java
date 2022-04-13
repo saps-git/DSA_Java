@@ -1,64 +1,76 @@
 package com.dsa.linkedlist;
 
 public class ReverseLinkedlist {
-    static class Node{
-        int data;
-        Node next;
+    private Node head;
+    private int size;
 
-        public Node(int data){
+    public ReverseLinkedlist() {this.size = 0;}
+
+    private class Node {
+        private int data;
+        private Node next;
+        public Node() {}
+        public Node(int data) {
             this.data = data;
         }
     }
-    
-    static Node head;
 
-    public static Node insert(int data){
-        Node toAdd = new Node(data);
-        toAdd.next = null;
+    public void insertFirst(int data) {
+        Node node = new Node(data);
+        node.next = head;
+        head = node;
 
-        if(head == null) head = toAdd;
-
-        else{
-            Node temp = head;
-            while(temp.next != null) 
-                temp = temp.next;
-
-            temp.next = toAdd;
-        }
-
-        return toAdd;
+        size += 1;
     }
 
-    public static void traverse(Node head){
+    public void insert(int data) {
+        Node node = new Node(data);
+        node.next = null;
+        if(head == null) {
+            insertFirst(data);
+            return;
+        }
         Node temp = head;
-        while(temp != null){
-            System.out.print(temp.data + " ");
+        while(temp.next != null) {
             temp = temp.next;
         }
+        temp.next = node;
+        size += 1;
+    }
+
+    public void reverse() {
+        Node curr = head;
+        Node prev = null;
+        while(curr.next != null) {
+            curr = curr.next;
+            head.next = prev;
+            prev = head;
+            head = curr;
+        }
+
+        curr.next = prev;
+    }
+
+    public void display() {
+        Node temp = head;
+        while(temp != null) {
+            System.out.print(temp.data + "->");
+            temp = temp.next;
+        }
+        System.out.print("END");
         System.out.println();
     }
 
-    public static Node reverseLinklist(Node head){
-        Node curr = head, prev = null;
-        while(curr != null){
-            Node temp = curr.next;
-            curr.next = prev;
-            prev = curr;
-            curr = temp;
-        }
-        return prev;
-    }
-
-
     public static void main(String[] args) {
-        head = insert(1);
-        head.next = insert(2);
-        head.next.next = insert(3);
-        head.next.next.next = insert(4);
-        head.next.next.next.next = insert(5);
-        head.next.next.next.next.next = insert(6);
-        traverse(head); 
-        head = reverseLinklist(head);
-        traverse(head);
+        ReverseLinkedlist linkedList = new ReverseLinkedlist();
+        linkedList.insert(1);
+        linkedList.insert(2);
+        linkedList.insert(3);
+        linkedList.insert(4);
+        linkedList.insert(5);
+
+        linkedList.display();
+        linkedList.reverse();
+        linkedList.display();
     }
 }
