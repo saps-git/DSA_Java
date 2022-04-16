@@ -38,7 +38,6 @@ public class LLTemplate {
         size += 1;
     }
 
-
     public void display() {
         Node temp = head;
         while(temp != null) {
@@ -56,9 +55,7 @@ public class LLTemplate {
         linkedList.insert(3);
         linkedList.insert(4);
         linkedList.insert(5);
-        //linkedList.insert(1);
 
         linkedList.display();
-
     }
 }
