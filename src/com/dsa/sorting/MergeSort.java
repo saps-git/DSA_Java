@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 //We will break the array into single elements, as single elements are already sorted,
 //then while the recursion is on returning phase we will merge those sorted arrays(starting with single elements).
+//O(n*logn)
 public class MergeSort {
 	//TODO: Look into this
 	//In place sorting, as we are making changes to the nums array itself, but something fishy going on

@@ -20,7 +20,7 @@ public class MergeSortedArray {
             i--; //we decrement i as atleast one of them has populated nums1[i];
         }
 
-        //Edge case might occur, when there are elements left in nums2, but p1 is <0, then we just add all the elements
+        //Edge case might occur, when there are elements left in nums2, but p1 is >0, then we just add all the elements
         //of nums2 to nums1
         while(p2 >= 0) nums1[i--] = nums2[p2--]; //i-- & p2-- means referencing the values, and then decr them for next
         //loop cycle
