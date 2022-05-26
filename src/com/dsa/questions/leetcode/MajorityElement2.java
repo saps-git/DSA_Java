@@ -7,6 +7,7 @@ import java.util.HashMap;
 import java.util.List;
 
 public class MajorityElement2 {
+    //Using extra space
     public static List<Integer> majorityElement(int[] nums) {
         HashMap<Integer, Integer> map = new HashMap<>();
         List<Integer> ans = new ArrayList<>();
