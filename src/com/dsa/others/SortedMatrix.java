@@ -2,7 +2,9 @@ package com.dsa.others;
 
 import java.util.Arrays;
 
-//These two conditions guarantees that if you connect all rows together, it is still sorted. So this question is just a regular binary search. Do NOT think it as an M row N column 2D matrix, it is just a 1D Sorted list the length is M * N.
+//These two conditions guarantees that if you connect all rows together, it is still sorted.
+// So this question is just a regular binary search. Do NOT think it as an M row N column 2D matrix,
+// it is just a 1D Sorted list the length is M * N.
 //
 //        Integers in each row are sorted from left to right.
 //        The first integer of each row is greater than the last integer of the previous row.

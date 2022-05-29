@@ -2,6 +2,8 @@ package com.dsa.questions.leetcode;
 
 //Leetcode-1492
 
+import java.util.Arrays;
+
 public class KthFactorOfN {
     //O(n)
     /*public static int kthFactor(int n, int k) {
@@ -30,5 +32,30 @@ public class KthFactorOfN {
     public static void main(String[] args) {
         int n = 12, k = 3;
         System.out.println(kthFactor(n, k));
+    }
+
+    public static class CountPrime {
+        public static int countPrimes(int n) {
+            if(n <= 2) return 0;
+            boolean[] arr = new boolean[n];
+            Arrays.fill(arr, true);
+            for(int i=2;i<=Math.sqrt(n);i++) {
+                if(arr[i]) {
+                    for(int j=i*2;j<n;j+=i) arr[j] = false;
+                }
+            }
+
+            int ans = 0;
+            for(int i=2;i<n;i++) {
+                if(arr[i]) ans++;
+            }
+
+            return ans;
+        }
+
+        public static void main(String[] args) {
+            int n = 40;
+            System.out.println(countPrimes(n));
+        }
     }
 }

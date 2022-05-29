@@ -15,5 +15,6 @@ public class FloorCeiling {
     public static void main(String[] args) {
         int[] nums = {2,3,5,9,15,16,18};
         System.out.println(floor(nums, 14, "floor"));
+        System.out.println(floor(nums, 14, "ceiling"));
     }
 }
