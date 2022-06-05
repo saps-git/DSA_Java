@@ -18,7 +18,7 @@ public class SearchRotatedArray2 {
             } else {
                 //duplicates, we know nums[mid] != target, so nums[start] != target
                 //based on current information, we can only move left pointer to skip one cell
-                //thus in the worest case, we would have target: 2, and array like 11111111, then
+                //thus in the worst case, we would have target: 2, and array like 11111111, then
                 //the running time would be O(n)
                 start++;
             }
