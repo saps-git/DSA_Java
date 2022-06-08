@@ -15,13 +15,13 @@ public class SingleElement {
             int mid = start + (end-start)/2;
             if(nums[mid] == nums[mid+1]) mid = mid-1; //so that pairs stay on the same side
 
-            if((mid-start + 1) % 2 != 0) end = mid; //checking if size is even
-            else start = mid+1;
+            if((mid-start + 1) % 2 == 0) start = mid+1; //checking if size is even
+            else end = mid;
         }
-        return nums[start];
+        return nums[end];
     }
     public static void main(String[] args) {
-        int[] nums = {1,1,2,3,3,4,4,8,8};
+        int[] nums = {1,2,2,3,3};
         System.out.println(singleNonDuplicate(nums));
     }
 }
