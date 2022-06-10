@@ -5,28 +5,16 @@ package com.dsa.leetcode.Arrays;
 import java.util.Arrays;
 
 public class RotateArray {
-    //Noobway using extra space( space- O(n) )
-//    public static void rotate(int[] nums, int k) {
-//        k = k % nums.length;
-//        if(k == 0) return;
-//
-//        int[] ans = new int[nums.length];
-//
-//        int n = nums.length - k ;
-//        int pos = 0;
-//        for(int i=n;i<nums.length;i++) {
-//            ans[pos++] = nums[i];
-//        }
-//        for(int i=0;i<n;i++) {
-//            ans[pos++] = nums[i];
-//        }
-//
-//        for(int i=0;i<nums.length;i++) {
-//            nums[i] = ans[i];
-//        }
-//    }
+    //using extra space( space- O(n) )
+   /* public static void rotate(int[] nums, int k) {
+        int[] temp = new int[nums.length];
+        for(int i=0;i<nums.length;i++) {
+            temp[(i+k)%nums.length] = nums[i];
+        }
 
-    //Proway (space - O(1) )
+        int i=0;
+        for(int n: temp) nums[i++] = n;
+    }*/
 
     //use a pen and paper you'll understand
     //just reversing and swapping
