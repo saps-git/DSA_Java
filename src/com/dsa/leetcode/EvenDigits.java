@@ -1,4 +1,4 @@
-package com.dsa.leetcode.HashMap_HashSet;
+package com.dsa.leetcode;
 
 //Leetcode-1295
 
