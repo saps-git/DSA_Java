@@ -5,7 +5,6 @@ package com.dsa.leetcode.Stack;
 import java.util.Stack;
 
 public class MinStack {
-    //Noobway, O(2n) Space with 2 stacks, but gave better result on leetcode
 
     Stack<Integer> st;
     Stack<Integer> min;
