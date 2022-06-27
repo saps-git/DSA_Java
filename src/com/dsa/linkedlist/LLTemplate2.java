@@ -40,6 +40,17 @@ public class LLTemplate2 {
         System.out.println();
     }
 
+    public boolean detectCycle() {
+        Node slow = head, fast = head;
+        while(fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+
+            if(slow.data == fast.data) return true;
+        }
+
+        return false;
+    }
 
     public static void main(String[] args) {
         LLTemplate2 ll = new LLTemplate2();
@@ -49,6 +60,8 @@ public class LLTemplate2 {
         head.next.next.next = ll.insert(4);
         head.next.next.next.next = ll.insert(5);
         head.next.next.next.next.next = ll.insert(6);
+        head.next.next.next.next.next.next =  head.next.next.next;
+        ll.traverse();
     }
 }
 

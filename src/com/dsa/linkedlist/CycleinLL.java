@@ -1,8 +1,8 @@
 package com.dsa.linkedlist;
 
-public class CheckCycle {
+public class CycleinLL {
     private static Node head;
-    public CheckCycle() {this.head = null;}
+    public CycleinLL() {this.head = null;}
 
     private class Node{
         int data;
@@ -80,7 +80,7 @@ public class CheckCycle {
     }
 
     public static void main(String[] args) {
-        CheckCycle ll = new CheckCycle();
+        CycleinLL ll = new CycleinLL();
         head = ll.insert(1);
         head.next = ll.insert(2);
         head.next.next = ll.insert(3);

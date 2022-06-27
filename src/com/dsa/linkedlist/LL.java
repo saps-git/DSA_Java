@@ -23,7 +23,7 @@ public class LL {
         size += 1;
     }
 
-    public void insert(int data) {
+    public void insertLast(int data) {
         Node node = new Node(data);
         node.next = null;
         if(head == null) {
@@ -128,21 +128,21 @@ public class LL {
 
     public static void main(String[] args) {
         LL linkedList = new LL();
-        linkedList.insert(2);
-        linkedList.insert(4);
-        linkedList.insert(5);
-        linkedList.insert(10);
-        linkedList.insert(13);
+        linkedList.insertLast(2);
+        linkedList.insertLast(4);
+        linkedList.insertLast(5);
+        linkedList.insertLast(10);
+        linkedList.insertLast(13);
 
         linkedList.insertAtPos(15,1);
         linkedList.display();
-//        System.out.println(linkedList.find(10));
-//        System.out.println(linkedList.get(2).data);
-//
-//        System.out.println(linkedList.deleteFirst());
-//        System.out.println(linkedList.deleteLast());
-//        System.out.println(linkedList.deletePos(3));
-//        linkedList.display();
+        System.out.println(linkedList.find(10));
+        System.out.println(linkedList.get(2).data);
+
+        System.out.println(linkedList.deleteFirst());
+        System.out.println(linkedList.deleteLast());
+        System.out.println(linkedList.deletePos(3));
+        linkedList.display();
 
     }
 }

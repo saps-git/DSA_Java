@@ -4,7 +4,7 @@ package com.dsa.leetcode.Linkedlist;
 
 public class ReverseLL2 {
     //TODO: PUT THE BELOW CODE IN LLTemplate.java FILE AND MAKE CHANGES ACCORDINGLY AND RUN, OR STRAIGHT UP RUN IT ON LEETCODE
-    /*public Node reverseBetween(int head, int left, int right) {
+    /*public Node reverseBetween(Node head, int left, int right) {
         int len = right-left; //length of the part to be reversed
         Node curr = head;
         Node prev = null;

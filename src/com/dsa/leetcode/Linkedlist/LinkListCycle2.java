@@ -4,7 +4,7 @@ package com.dsa.leetcode.Linkedlist;
 
 public class LinkListCycle2 {
     //TODO: PUT THE BELOW CODE IN LLTemplate2.java FILE AND MAKE CHANGES ACCORDINGLY AND RUN, OR STRAIGHT UP RUN IT ON LEETCODE
-    /*public static CheckCycle.Node startPoint() {
+    /*public static Node startPoint() {
         Node fast = head, slow = head;
         while(fast != null && fast.next != null) {
             slow = slow.next;
