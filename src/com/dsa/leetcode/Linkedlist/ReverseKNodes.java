@@ -17,7 +17,7 @@ public class ReverseKNodes {
             int i = 0; //to check the multiple of k
             while(curr != null && i < k) {
                 curr = curr.next; //moving the curr, till it becomes null or
-                i--; // reaches a multiple of 4(where we will reverse it)
+                i++; // reaches a multiple of 4(where we will reverse it)
             }
 
             if(i != k) prev.next = tail; //this means there aren't enough nodes left (nodes in multiple of k) to reverse
@@ -30,7 +30,7 @@ public class ReverseKNodes {
         return dummy.next; //returning head
     }
     private Node reverse(Node node, int k) { //normal reverse function
-        Node curr = head, prev = null;
+        Node curr = node, prev = null;
         while(curr != null && k > 0) {
             Node temp = curr.next;
             curr.next = prev;
