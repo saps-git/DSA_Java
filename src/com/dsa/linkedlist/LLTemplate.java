@@ -50,15 +50,15 @@ public class LLTemplate {
 
 
     public static void main(String[] args) {
-        /*LLTemplate linkedList = new LLTemplate();
+        LLTemplate linkedList = new LLTemplate();
         linkedList.insert(1);
         linkedList.insert(2);
         linkedList.insert(3);
         linkedList.insert(4);
         linkedList.insert(5);
 
-        linkedList.display();*/
-        LLTemplate linkedList = new LLTemplate();
+        linkedList.display(linkedList.head);
+        /*LLTemplate linkedList = new LLTemplate();
         linkedList.insert(2);
         linkedList.insert(4);
         linkedList.insert(5);
@@ -67,10 +67,8 @@ public class LLTemplate {
         LLTemplate linkedList2 = new LLTemplate();
         linkedList2.insert(5);
         linkedList2.insert(6);
-        linkedList2.insert(4);
+        linkedList2.insert(4);*/
 
-        LLTemplate ans = new LLTemplate();
     }
-
 
 }

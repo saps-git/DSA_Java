@@ -9,7 +9,7 @@ public class RotateLL {
         Node curr = head;
         while(curr.next != null) {
             curr = curr.next;
-            len++; //counting the lenght of the LL
+            len++; //counting the length of the LL
         }
 
         k = k % len; //k can be bigger than len, hence
