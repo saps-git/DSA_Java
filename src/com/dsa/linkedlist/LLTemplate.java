@@ -49,6 +49,7 @@ public class LLTemplate {
     }
 
 
+
     public static void main(String[] args) {
         LLTemplate linkedList = new LLTemplate();
         linkedList.insert(1);
@@ -58,6 +59,7 @@ public class LLTemplate {
         linkedList.insert(5);
 
         linkedList.display(linkedList.head);
+
         /*LLTemplate linkedList = new LLTemplate();
         linkedList.insert(2);
         linkedList.insert(4);
@@ -70,5 +72,4 @@ public class LLTemplate {
         linkedList2.insert(4);*/
 
     }
-
 }

@@ -21,28 +21,26 @@ public class CombinationSum {
         System.out.println(combinationSum(candidates, target));
     }
     public static List<List<Integer>> combinationSum(int[] candidates, int target) {
-        List<List<Integer>> res = new ArrayList<>();
-        helperRecursive(candidates, target, 0, new ArrayList<>(), res);
-        return res;
+        List<List<Integer>> ans = new ArrayList<>();
+        findCombinations(candidates, target, ans, new ArrayList<>(), 0);
+        return ans;
     }
-    public static void helperRecursive(int[] candidates, int target, int index, List<Integer> ans, List<List<Integer>> res) {
-        if(index == candidates.length) return; //if index reached end of array(candidate) ,i.e,
-        // no element left to be included or excluded, then return
-        if (target == 0) { //if target has become zero (Since we are subtracting element from target while inclusion,
-            // At one point target will eventually become 0) we get one set
-            res.add(new ArrayList<>(ans));
+
+    public static void findCombinations(int[] candidates, int target, List<List<Integer>> ans, List<Integer> curr, int i) {
+        if(target == 0) {
+            ans.add(new ArrayList<>(curr));
             return;
         }
-        if(target<0) return; //If target has become less than 0, i.e, sum of elements we included till now
-        // is greater than target, then return
 
-        //else, target is still greater than 0, continue till we meet either of given condition
-        if(candidates[index] <= target) { //we check if the current element is less than target
-            ans.add(candidates[index]); // then we include it, and call recursive call
-            helperRecursive(candidates, target-candidates[index], index, ans, res);
-            ans.remove(ans.size()-1); //while coming back we remove the last element in the list, to check,
-            //for other element with the existing combination
+        if(target < 0) return;
+
+        if(i == candidates.length) return;
+
+        if(candidates[i] <= target) {
+            curr.add(candidates[i]);
+            findCombinations(candidates, target-candidates[i], ans, curr, i);
+            curr.remove(curr.size() - 1);
         }
-        helperRecursive(candidates, target, index+1, ans, res); //if it is larger, we ignore it and call recursive
+        findCombinations(candidates, target, ans, curr, i+1);
     }
 }

@@ -18,15 +18,14 @@ public class PeakIdxMountainArr {
         while(start <= end){
             int mid = start + (end-start)/2;
             if(nums[mid] > nums[mid-1] && nums[mid] > nums[mid+1]) return nums[mid];
-            else if(nums[mid] < nums[mid-1]) end = mid;
-            else start = mid;
+            else if(nums[mid] < nums[mid+1]) start = mid+1;
+            else end = mid;
         }
         return -1;
     }
 
     public static void main(String[] args) {
-        //int[] nums = {0,1,2,3,2,1};
-        int[] nums = {4,3,2,1};
+        int[] nums = {0,1,2,3,2,1};
         System.out.println(peakIndexInMountainArray(nums));
     }
 }

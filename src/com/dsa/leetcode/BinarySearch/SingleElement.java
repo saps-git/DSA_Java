@@ -9,7 +9,7 @@ package com.dsa.leetcode.BinarySearch;
 //hence on every iteration we'll look into the side that has odd number of elements, and finally
 //when loop breaks, answer will be on start
 public class SingleElement {
-    public static int singleNonDuplicate(int[] nums) {
+    public static int singleElement(int[] nums) {
         int start = 0, end = nums.length-1;
         while(start < end) {
             int mid = start + (end-start)/2;
@@ -22,6 +22,6 @@ public class SingleElement {
     }
     public static void main(String[] args) {
         int[] nums = {1,2,2,3,3};
-        System.out.println(singleNonDuplicate(nums));
+        System.out.println(singleElement(nums));
     }
 }

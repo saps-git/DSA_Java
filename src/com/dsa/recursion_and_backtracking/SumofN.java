@@ -6,7 +6,7 @@ public class SumofN {
 		if(num == 0)
 			return ans;
 
-		ans = num + ans;
+		ans += num;
 		return sumOfNnoob(num-1, ans);
 	}
 

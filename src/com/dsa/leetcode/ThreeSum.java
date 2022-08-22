@@ -14,7 +14,7 @@ public class ThreeSum {
 
         Arrays.sort(nums);
         for(int i=0;i<nums.length-2;i++){
-            if(i == 0 || i>0 && nums[i] != nums[i - 1]){
+            if(i == 0 || nums[i] != nums[i - 1]){
                 int target = 0-nums[i];
                 int low = i+1;
                 int high = nums.length-1;
