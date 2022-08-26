@@ -1,47 +1,29 @@
 package com.dsa.recursion_and_backtracking;
 
-//Much like power-set question
-//On every recursive call, we make as many subsequent recursive calls as,
-// there are places to be filled in the answer string(ans) by the current element of the given string(str)
-// in which, we add an element from given string(str), to all the possible positions in the answer string(ans),
-// finally when the given string is empty(i == str.length()), we print the answer string,
-// as it now contains a valid permutation.
-
 public class PermutationOfString {
-    public static void main(String[] args) {
-        String str = "abc";
-        permutations(str, "", 0);
-        //System.out.println(permutations2(str, "", 0));
-    }
-    public static void permutations(String str, String ans, int index) {
-        if(index == str.length()) {
-            System.out.println(ans);
+    public static void permutations(String str, int i) {
+        if(i == str.length()) {
+            System.out.println(str);
             return;
         }
 
-        char ch = str.charAt(index);
-        for(int i=0;i<=ans.length();i++) { //there will always be n+1 places to be filled if there are n elements already
-            String firstHalf = ans.substring(0, i); //we will take two halves, first
-            String secondHalf = ans.substring(i, ans.length()); // and second
-            permutations(str, firstHalf+ch+secondHalf, index+1); //and then add the char in b/w
+        for(int j=i;j<str.length();j++) {
+            str = swap(str, i, j);
+            permutations(str, i+1);
+            str = swap(str, i, j);
         }
     }
-    /*public static ArrayList<String> permutations2(String str, String ans, int index) {
-        if(index == str.length()) {
-            ArrayList<String> res = new ArrayList<>();
-            res.add(ans);
-            return res;
-        }
 
-        char ch = str.charAt(index);
-        ArrayList<String> sol = new ArrayList<>(); //Local to this call(first call)
+    public static String swap(String str, int i, int j) {
+        char[] ch = str.toCharArray();
+        char temp = ch[i];
+        ch[i] = ch[j];
+        ch[j] = temp;
+        return new String(ch);
+    }
 
-        for(int i=0;i<=ans.length();i++) {
-            String firstHalf = ans.substring(0, i);
-            String secondHalf = ans.substring(i, ans.length());
-            sol.addAll(permutations2(str, firstHalf+ch+secondHalf, index+1));
-        }
-
-        return sol;
-    }*/
+    public static void main(String[] args) {
+        String str = "abc";
+        permutations(str, 0);
+    }
 }
