@@ -1,40 +1,30 @@
 package com.dsa.recursion_and_backtracking;
 
-//On every recursive call, we make two subsequent recursive calls,
-// one in which, we add an element from given string(str), to the answer string(ans),
-// second in which, we do NOT add an element from given string(str), to the answer string(ans),
-// finally when the given string is empty(i == str.length()), we print the answer string,
-// as it now contains a valid subsequence.
-
 import java.util.ArrayList;
+import java.util.List;
 
+//PowerSet - all subsequences
 //O(2^n)
 public class PowerSetOfString {
-    public static void main(String[] args) {
-        //subSeq("", "abc", 0);
-        System.out.println(subSeq2("", "abc", 0));
+    public static List<String> subSeq(String str) {
+        List<String> ans = new ArrayList<>();
+        findSeq(str, ans, new StringBuilder(), 0);
+        return ans;
     }
-    //simply printing the subseq
-    /*public static void subSeq(String ans, String str, int i) {
+    public static void findSeq(String str, List<String> ans, StringBuilder curr, int i) {
         if(i == str.length()) {
-            System.out.println(ans);
+            ans.add(new String(curr));
             return;
         }
 
-        subSeq(ans + str.charAt(i), str, i+1);
-        subSeq(ans, str, i+1);
-    }*/
-    //returning an arraylist
-    public static ArrayList<String> subSeq2(String ans, String str, int i) {
-        if(i == str.length()) {
-            ArrayList<String> res = new ArrayList<>();
-            res.add(ans);
-            return res;
-        }
+        curr.append(str.charAt(i));
+        findSeq(str, ans, curr, i+1);
 
-        ArrayList<String> adding = subSeq2(ans+str.charAt(i), str, i+1);
-        ArrayList<String> notAdding = subSeq2(ans, str, i+1);
-        adding.addAll(notAdding);
-        return adding;
+        curr.deleteCharAt(curr.length()-1);
+        findSeq(str, ans, curr, i+1);
+
+    }
+    public static void main(String[] args) {
+        System.out.println(subSeq("abc"));
     }
 }
