@@ -3,6 +3,7 @@ package com.dsa.leetcode.BinarySearch;
 //Leetcode-1200
 
 /* Minimum absolute difference between any two elements of the array */
+/* Return list of all such pairs */
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;

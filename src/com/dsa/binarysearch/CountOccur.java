@@ -4,7 +4,7 @@ public class CountOccur {
     //just find the first and the last occurence, and then last-first + 1
     public static int search(int[] nums, int target, boolean isFirst){
         int res = -1;
-        int start = 0, end = nums.length;
+        int start = 0, end = nums.length-1;
         while(start <= end){
             int mid = start + (end-start)/2;
             if(target < nums[mid]) end = mid-1;
@@ -25,7 +25,7 @@ public class CountOccur {
     }
     public static void main(String[] args) {
         int[] nums = {1, 2, 2, 2, 2, 3, 4, 7 ,8 ,8 };
-        int target = 2;
+        int target = 8;
         System.out.println(count(nums, target));
     }
 }

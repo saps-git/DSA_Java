@@ -36,8 +36,8 @@ public class FindMountainArr {
         return end;
     }
     public static void main(String[] args) {
-        int[] nums = {1,2,3,4,5,3,1};
-        int target = 3;
+        int[] nums = {0,5,3,1};
+        int target = 1;
         System.out.println(findInMountainArray(nums, target));
     }
 }

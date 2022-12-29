@@ -21,6 +21,7 @@ public class BookAllocation {
             high += i;
         }
 
+        System.out.println(low + " " + high);
         int res = -1;
         while(low <= high) {
             int mid = low + (high - low)/2;

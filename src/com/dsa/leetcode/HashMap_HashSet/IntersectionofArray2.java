@@ -5,6 +5,7 @@ package com.dsa.leetcode.HashMap_HashSet;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 
 public class IntersectionofArray2 {
     public static int[] intersect(int[] arr1, int[] arr2) {

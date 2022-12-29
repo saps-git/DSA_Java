@@ -5,6 +5,8 @@ package com.dsa.leetcode;
 import java.util.HashMap;
 import java.util.Map;
 
+//Leetcode-1
+
 public class TwoSum {
     public static int[] twoSum(int[] nums, int target) {
         int[] ans = new int[2];
