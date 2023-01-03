@@ -1,4 +1,4 @@
-package com.dsa.leetcode;
+package com.dsa.leetcode.TwoPointer;
 
 //Leetcode-16
 
