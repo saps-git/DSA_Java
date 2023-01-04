@@ -1,4 +1,4 @@
-package com.dsa.leetcode.Arrays;
+package com.dsa.leetcode.TwoPointer;
 
 //Leetcode-42
 
@@ -7,29 +7,27 @@ public class RainwaterTrapping {
     //then compare both of them, and take the min one, from which we subtract height[i] to find the
     //amount of water that can be stored at a particular height
     //O(n) time but O(2n) space
-    /*public static int trap(int[] height) {
-        int[] left = new int[height.length];
-        int[] right = new int[height.length];
-        int ans = 0;
-
-        int leftHigh = 0;
-        for(int i=0;i<left.length;i++) {
-            left[i] = Math.max(leftHigh, height[i]);
-            leftHigh = Math.max(leftHigh, left[i]);
-        }
-
-        int rightHigh = 0;
-        for(int i=right.length-1;i>=0;i--) {
-            right[i] = Math.max(rightHigh, height[i]);
-            rightHigh = Math.max(rightHigh, right[i]);
-        }
-
-        for(int i=0;i<height.length;i++) {
-            ans += Math.min(left[i], right[i]) - height[i];
-        }
-
-        return ans;
-    }*/
+//    public static int trap(int[] height) {
+//        int[] left = new int[height.length];
+//        int[] right = new int[height.length];
+//
+//        left[0] = height[0];
+//        for(int i=1;i<left.length;i++) {
+//            left[i] = Math.max(left[i-1], height[i]);
+//        }
+//
+//        right[height.length-1] = height[height.length-1];
+//        for(int i=right.length-2;i>=0;i--) {
+//            right[i] = Math.max(right[i+1], height[i]);
+//        }
+//
+//        int ans = 0;
+//        for(int i=0;i<height.length;i++) {
+//            ans += Math.min(left[i], right[i]) - height[i];
+//        }
+//
+//        return ans;
+//    }
 
     //here we will use two pointer, and will keep track of the left and right maximums, and then check
     //which ever is minimum to add that much water only
