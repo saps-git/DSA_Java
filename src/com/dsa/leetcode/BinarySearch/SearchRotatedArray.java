@@ -37,7 +37,7 @@ public class SearchRotatedArray {
         while(start <= end) {
             int mid = start + (end-start)/2;
             if(target == nums[mid]) return mid;
-            if(nums[start] < nums[mid]){ //first we check if start is less than mid, which will imply that left part is sorted
+            if(nums[start] <= nums[mid]){ //first we check if start is less than mid, which will imply that left part is sorted
                 if(nums[start] <= target && target < nums[mid]) end = mid-1; // then we check if target exists in this part,
                     // and reduce the search space accordingly
                 else start = mid+1; //else we will drop the left half and search in the right half
@@ -49,8 +49,8 @@ public class SearchRotatedArray {
         return -1;
     }
     public static void main(String[] args) {
-        int[] nums = {4,5,6,7,0,1,2};
-        int target = 0;
+        int[] nums = {1,3};
+        int target = 3;
         System.out.println(searchRotated(nums, target));
     }
 }
