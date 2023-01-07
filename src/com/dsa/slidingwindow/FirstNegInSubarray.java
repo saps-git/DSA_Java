@@ -1,6 +1,5 @@
 package com.dsa.slidingwindow;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
@@ -27,7 +26,7 @@ public class FirstNegInSubarray {
         return ans;
     }
     public static void main(String[] args) {
-        int nums[] = {12, -1, -7, 8, -15, 30, 16, 28};
+        int[] nums = {12, -1, -7, 8, -15, 30, 16, 28};
         int k = 3;
         System.out.println(Arrays.toString(firstNegativeInteger(nums, k)));
     }

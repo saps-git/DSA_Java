@@ -1,4 +1,4 @@
-package com.dsa.leetcode.Queue;
+package com.dsa.leetcode.SlidingWindow;
 
 //Leetcode-239
 
@@ -6,7 +6,7 @@ import java.util.ArrayDeque;
 import java.util.Arrays;
 import java.util.Deque;
 
-public class MaxSlidingWindow {
+public class SlidingWindowMax {
     //Noobway time - O(n * k) n - length of array, k - size of window
     /*public static int[] maxSlidingWindow(int[] nums, int k) {
         int[] ans = new int[nums.length-k+1];
@@ -23,17 +23,20 @@ public class MaxSlidingWindow {
 
     //Proway
     public static int[] maxSlidingWindow(int[] nums, int k) {
-        int[] ans = new int[nums.length-k+1];
-        Deque<Integer> dq = new ArrayDeque<>();
-        int x = 0;
-        for(int i=0;i<nums.length;i++){
-            while(!dq.isEmpty() && dq.peek() == i-k) dq.poll();
-            while(!dq.isEmpty() && nums[i] >= nums[dq.peekLast()]) dq.pollLast();
-
-            dq.offer(i);
-            if(i >= k-1) ans[i - (k-1)] = nums[dq.peek()];
+        int i = 0, j = 0;
+        Deque<Integer> deq = new ArrayDeque<>();
+        int[] ans = new int[nums.length - k + 1];
+        int idx = 0;
+        while(j < nums.length) {
+            while(!deq.isEmpty() && nums[j] > deq.peekLast()) deq.pollLast();
+            deq.offerLast(nums[j]);
+            if((j-i) + 1 == k) {
+                ans[idx++] = deq.peekFirst();
+                if(nums[i] == deq.peekFirst()) deq.pollFirst();
+                i++;
+            }
+            j++;
         }
-
         return ans;
     }
 
