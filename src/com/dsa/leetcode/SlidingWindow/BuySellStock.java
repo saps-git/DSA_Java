@@ -1,13 +1,13 @@
-package com.dsa.leetcode.Arrays;
+package com.dsa.leetcode.SlidingWindow;
 
 //Leetcode-121
 
 public class BuySellStock {
     public static int maxProfit(int[] prices) {
         int minSofar = prices[0], maxProfit = 0;
-        for(int i=0;i<prices.length;i++) {
-            minSofar = Math.min(minSofar, prices[i]);
-            maxProfit = Math.max(maxProfit, prices[i] - minSofar);
+        for (int price : prices) {
+            minSofar = Math.min(minSofar, price);
+            maxProfit = Math.max(maxProfit, price - minSofar);
         }
 
         return maxProfit;
