@@ -1,10 +1,17 @@
 package com.dsa.leetcode.Tree;
 
-import static com.dsa.leetcode.Tree.LevelOrderTraversal.*;
+import java.util.Arrays;
+
+import static com.dsa.leetcode.Tree.BalanceBT.*;
+import static com.dsa.leetcode.Tree.MaxDepth.*;
+import static com.dsa.leetcode.Tree.DiameterBT.*;
+import static com.dsa.leetcode.Tree.MaxPathSum.*;
+import static com.dsa.leetcode.Tree.ZigZagLevelOrder.*;
+
 public class BinaryTree {
     private static TreeNode root;
 
-    static class TreeNode {
+    public static class TreeNode {
         TreeNode left;
         TreeNode right;
         int val; //this should be generic type
@@ -20,17 +27,22 @@ public class BinaryTree {
         TreeNode third = new TreeNode(3);
         TreeNode fourth = new TreeNode(4);
         TreeNode fifth = new TreeNode(5);
+        TreeNode sixth = new TreeNode(6);
+        TreeNode seventh = new TreeNode(7);
 
         root = first; // root ---> first
         first.left = second;
-        first.right = third;// second <--- root ---> right
+        first.right = third;// second <--- first ---> third
 
         second.left = fourth;
-        second.right = fifth; // fourth <--- root ---> fifth
+        second.right = fifth; // fourth <--- second ---> fifth
+
+        third.left = sixth; //
+        third.right = seventh; // sixth <--- third ---> seventh
     }
 
     public static void main(String[] args) {
         create();
-        System.out.println(levelOrder(root));
+        System.out.println(zigzagLevelOrder(root));
     }
 }
