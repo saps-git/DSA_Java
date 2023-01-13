@@ -5,6 +5,8 @@ import static com.dsa.tree.Inorder.*;
 import static com.dsa.tree.PostOrder.*;
 import static com.dsa.tree.LevelOrder.*;
 import static com.dsa.tree.MaxOfBT.*;
+import static com.dsa.tree.TopView.*;
+import static com.dsa.tree.BottomView.*;
 
 public class BinaryTree {
     private static TreeNode root;
@@ -26,19 +28,21 @@ public class BinaryTree {
         TreeNode fourth = new TreeNode(4);
         TreeNode fifth = new TreeNode(5);
         TreeNode sixth = new TreeNode(6);
+        TreeNode seventh = new TreeNode(7);
 
         root = first; // root ---> first
         first.left = second;
-        first.right = third;// second <--- first ---> right
+        first.right = third;// second <--- first ---> third
 
         second.left = fourth;
         second.right = fifth; // fourth <--- second ---> fifth
 
-        third.left = sixth; // sixth <--- third ---> null
+        third.left = sixth;
+        third.right = seventh; // sixth <--- third ---> seventh
     }
 
     public static void main(String[] args) {
         create();
-        System.out.println(maxOfBT(root));
+        System.out.println(bottomView(root));
     }
 }

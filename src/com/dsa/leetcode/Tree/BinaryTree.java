@@ -7,6 +7,7 @@ import static com.dsa.leetcode.Tree.MaxDepth.*;
 import static com.dsa.leetcode.Tree.DiameterBT.*;
 import static com.dsa.leetcode.Tree.MaxPathSum.*;
 import static com.dsa.leetcode.Tree.ZigZagLevelOrder.*;
+import static com.dsa.leetcode.Tree.VerticalOrder.*;
 
 public class BinaryTree {
     private static TreeNode root;
@@ -35,14 +36,13 @@ public class BinaryTree {
         first.right = third;// second <--- first ---> third
 
         second.left = fourth;
-        second.right = fifth; // fourth <--- second ---> fifth
+        second.right = sixth; // fourth <--- second ---> sixth
 
-        third.left = sixth; //
-        third.right = seventh; // sixth <--- third ---> seventh
+        third.left = fifth; //
+        third.right = seventh; // fifth <--- third ---> seventh
     }
 
     public static void main(String[] args) {
         create();
-        System.out.println(zigzagLevelOrder(root));
     }
 }

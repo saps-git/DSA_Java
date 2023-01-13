@@ -14,7 +14,7 @@ public class ZigZagLevelOrder {
         boolean leftToRight = true;
         while(!queue.isEmpty()) {
             int size = queue.size();
-            List<Integer> level = new ArrayList<>(size);
+            List<Integer> level = new ArrayList<>();
             for(int i=0;i<size;i++) {
                 BinaryTree.TreeNode temp = queue.poll();
                 if(leftToRight) level.add(temp.val);
