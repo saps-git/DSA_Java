@@ -7,6 +7,7 @@ import static com.dsa.tree.LevelOrder.*;
 import static com.dsa.tree.MaxOfBT.*;
 import static com.dsa.tree.TopView.*;
 import static com.dsa.tree.BottomView.*;
+import static com.dsa.tree.PathToNode.*;
 
 public class BinaryTree {
     private static TreeNode root;
@@ -43,6 +44,6 @@ public class BinaryTree {
 
     public static void main(String[] args) {
         create();
-        System.out.println(bottomView(root));
+
     }
 }
