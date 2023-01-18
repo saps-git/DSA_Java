@@ -11,6 +11,8 @@ import static com.dsa.leetcode.Tree.VerticalOrder.*;
 import static com.dsa.leetcode.Tree.RightSideView.*;
 import static com.dsa.leetcode.Tree.SymmetricBT.*;
 import static com.dsa.leetcode.Tree.LowestCommonAncestor.*;
+import static com.dsa.leetcode.Tree.MaxWidth.*;
+
 
 public class BinaryTree {
     private static TreeNode root;
@@ -58,6 +60,7 @@ public class BinaryTree {
         TreeNode sixth = new TreeNode(6);
         TreeNode seventh = new TreeNode(7);
         TreeNode eighth = new TreeNode(8);
+        TreeNode ninth = new TreeNode(9);
 
         root = first; // root ---> first
         first.left = second;
@@ -66,11 +69,13 @@ public class BinaryTree {
         second.left = fourth;
         second.right = fifth; // fourth <--- second ---> sixth
 
-        fourth.left = eighth;
+        //fourth.left = eighth;
 
         third.left = sixth; //
         third.right = seventh; // fifth <--- third ---> seventh
 
-        System.out.println(lowestCommonAncestor(root, fifth, eighth).val);
+        //seventh.right = ninth;
+
+        System.out.println(widthOfBinaryTree(root));
     }
 }
