@@ -12,6 +12,7 @@ import static com.dsa.leetcode.Tree.RightSideView.*;
 import static com.dsa.leetcode.Tree.SymmetricBT.*;
 import static com.dsa.leetcode.Tree.LowestCommonAncestor.*;
 import static com.dsa.leetcode.Tree.MaxWidth.*;
+import static com.dsa.leetcode.Tree.NodesAtDistK.*;
 
 
 public class BinaryTree {
@@ -67,15 +68,15 @@ public class BinaryTree {
         first.right = third;// second <--- first ---> third
 
         second.left = fourth;
-        second.right = fifth; // fourth <--- second ---> sixth
+        second.right = fifth; // fourth <--- second ---> fifth
 
-        //fourth.left = eighth;
+        fourth.left = eighth;
 
         third.left = sixth; //
-        third.right = seventh; // fifth <--- third ---> seventh
+        third.right = seventh; // sixth <--- third ---> seventh
 
-        //seventh.right = ninth;
+        seventh.right = ninth;
 
-        System.out.println(widthOfBinaryTree(root));
+        System.out.println(distanceK(root, second, 2));
     }
 }

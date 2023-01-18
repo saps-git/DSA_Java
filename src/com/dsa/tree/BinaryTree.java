@@ -9,6 +9,7 @@ import static com.dsa.tree.TopView.*;
 import static com.dsa.tree.BottomView.*;
 import static com.dsa.tree.PathToNode.*;
 import static com.dsa.tree.ChildrenSum.*;
+import static com.dsa.tree.BurningTree.*;
 
 public class BinaryTree {
     private static TreeNode root;
@@ -62,5 +63,7 @@ public class BinaryTree {
 
         third.left = sixth;
         third.right = seventh; // sixth <--- third ---> seventh
+
+        System.out.println(minTime(root, 5));
     }
 }
