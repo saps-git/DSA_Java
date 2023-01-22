@@ -64,6 +64,5 @@ public class BinaryTree {
         third.left = sixth;
         third.right = seventh; // sixth <--- third ---> seventh
 
-        System.out.println(minTime(root, 5));
     }
 }

@@ -1,6 +1,8 @@
 package com.dsa.leetcode.Tree;
 
 import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.Queue;
 
 import static com.dsa.leetcode.Tree.BalanceBT.*;
 import static com.dsa.leetcode.Tree.MaxDepth.*;
@@ -13,6 +15,8 @@ import static com.dsa.leetcode.Tree.SymmetricBT.*;
 import static com.dsa.leetcode.Tree.LowestCommonAncestor.*;
 import static com.dsa.leetcode.Tree.MaxWidth.*;
 import static com.dsa.leetcode.Tree.NodesAtDistK.*;
+import static com.dsa.leetcode.Tree.CountNodesCompleteTree.*;
+import static com.dsa.leetcode.Tree.SerializeDeserialize.*;
 
 
 public class BinaryTree {
@@ -51,6 +55,20 @@ public class BinaryTree {
 //        third.right = seventh; // fifth <--- third ---> seventh
     }
 
+    public static void levelOrder(BinaryTree.TreeNode root) {
+        if(root == null) return;
+
+        Queue<BinaryTree.TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+        while(!queue.isEmpty()) {
+            BinaryTree.TreeNode curr = queue.poll();
+            System.out.print(curr.val + " ");
+            if(curr.left != null) queue.offer(curr.left);
+            if(curr.right != null) queue.offer(curr.right);
+        }
+
+        System.out.println();
+    }
     public static void main(String[] args) {
         //create();
         TreeNode first = new TreeNode(1);
@@ -62,6 +80,7 @@ public class BinaryTree {
         TreeNode seventh = new TreeNode(7);
         TreeNode eighth = new TreeNode(8);
         TreeNode ninth = new TreeNode(9);
+        TreeNode tenth = new TreeNode(10);
 
         root = first; // root ---> first
         first.left = second;
@@ -70,13 +89,15 @@ public class BinaryTree {
         second.left = fourth;
         second.right = fifth; // fourth <--- second ---> fifth
 
-        fourth.left = eighth;
+        sixth.left = eighth;
+        sixth.right = ninth; // eighth <-- fourth --> ninth
 
         third.left = sixth; //
         third.right = seventh; // sixth <--- third ---> seventh
 
-        seventh.right = ninth;
+        //fifth.left = tenth;
 
-        System.out.println(distanceK(root, second, 2));
+        BinaryTree.TreeNode ans = deserialize(serialize(root));
+        levelOrder(ans);
     }
 }
