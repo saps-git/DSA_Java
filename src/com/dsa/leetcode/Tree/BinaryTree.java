@@ -17,6 +17,7 @@ import static com.dsa.leetcode.Tree.MaxWidth.*;
 import static com.dsa.leetcode.Tree.NodesAtDistK.*;
 import static com.dsa.leetcode.Tree.CountNodesCompleteTree.*;
 import static com.dsa.leetcode.Tree.SerializeDeserialize.*;
+import static com.dsa.leetcode.Tree.FlattenBTtoLL.*;
 
 
 public class BinaryTree {
@@ -69,6 +70,15 @@ public class BinaryTree {
 
         System.out.println();
     }
+
+    public static void preOrder(BinaryTree.TreeNode root) {
+        if(root == null) return;
+
+        System.out.print(root.val + " ");
+        preOrder(root.left);
+        preOrder(root.right);
+    }
+
     public static void main(String[] args) {
         //create();
         TreeNode first = new TreeNode(1);
@@ -84,20 +94,22 @@ public class BinaryTree {
 
         root = first; // root ---> first
         first.left = second;
-        first.right = third;// second <--- first ---> third
+        first.right = fifth;// second <--- first ---> third
 
-        second.left = fourth;
-        second.right = fifth; // fourth <--- second ---> fifth
+        second.left = third;
+        second.right = fourth; // fourth <--- second ---> fifth
 
-        sixth.left = eighth;
-        sixth.right = ninth; // eighth <-- fourth --> ninth
+//        sixth.left = eighth;
+//        sixth.right = ninth; // eighth <-- fourth --> ninth
 
-        third.left = sixth; //
-        third.right = seventh; // sixth <--- third ---> seventh
+        //third.left = sixth; //
+        fifth.right = sixth; // sixth <--- third ---> seventh
 
         //fifth.left = tenth;
 
-        BinaryTree.TreeNode ans = deserialize(serialize(root));
-        levelOrder(ans);
+        preOrder(root);
+        flatten(root);
+        System.out.println();
+        preOrder(root);
     }
 }

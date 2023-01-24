@@ -10,6 +10,7 @@ import static com.dsa.tree.BottomView.*;
 import static com.dsa.tree.PathToNode.*;
 import static com.dsa.tree.ChildrenSum.*;
 import static com.dsa.tree.BurningTree.*;
+import static com.dsa.tree.MorrisTraversal.*;
 
 public class BinaryTree {
     private static TreeNode root;
@@ -64,5 +65,6 @@ public class BinaryTree {
         third.left = sixth;
         third.right = seventh; // sixth <--- third ---> seventh
 
+        morris(root);
     }
 }
