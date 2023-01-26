@@ -33,29 +33,6 @@ public class BinaryTree {
         }
     }
 
-    public static void create() {
-//        TreeNode first = new TreeNode(1);
-//        TreeNode second = new TreeNode(2);
-//        TreeNode third = new TreeNode(3);
-//        TreeNode fourth = new TreeNode(4);
-//        TreeNode fifth = new TreeNode(5);
-//        TreeNode sixth = new TreeNode(6);
-//        TreeNode seventh = new TreeNode(7);
-//        TreeNode eighth = new TreeNode(8);
-//
-//        root = first; // root ---> first
-//        first.left = second;
-//        first.right = third;// second <--- first ---> third
-//
-//        second.left = fourth;
-//        second.right = fifth; // fourth <--- second ---> sixth
-//
-//        fourth.left = eighth;
-//
-//        third.left = sixth; //
-//        third.right = seventh; // fifth <--- third ---> seventh
-    }
-
     public static void levelOrder(BinaryTree.TreeNode root) {
         if(root == null) return;
 
@@ -69,14 +46,6 @@ public class BinaryTree {
         }
 
         System.out.println();
-    }
-
-    public static void preOrder(BinaryTree.TreeNode root) {
-        if(root == null) return;
-
-        System.out.print(root.val + " ");
-        preOrder(root.left);
-        preOrder(root.right);
     }
 
     public static void main(String[] args) {
@@ -106,10 +75,5 @@ public class BinaryTree {
         fifth.right = sixth; // sixth <--- third ---> seventh
 
         //fifth.left = tenth;
-
-        preOrder(root);
-        flatten(root);
-        System.out.println();
-        preOrder(root);
     }
 }
