@@ -48,8 +48,6 @@ public class BinarySearchTree {
         insert(7);
         insert(2);
         insert(3);
-        insert(8);
-        System.out.println(findCeil(root, 6));
-        System.out.println(findFloor(root, 3));
+        insert(6);
     }
 }

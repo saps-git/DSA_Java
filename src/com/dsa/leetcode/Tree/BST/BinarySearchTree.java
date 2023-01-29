@@ -1,6 +1,11 @@
 package com.dsa.leetcode.Tree.BST;
 
 import static com.dsa.leetcode.Tree.BST.SearchinBST.*;
+import static com.dsa.leetcode.Tree.BST.DeleteNode.*;
+import static com.dsa.leetcode.Tree.BST.ValidateBT.*;
+import static com.dsa.leetcode.Tree.BST.KthSmallest.*;
+import static com.dsa.leetcode.Tree.BST.KthLargest.*;
+import static com.dsa.leetcode.Tree.BST.LCAinBST.*;
 
 public class BinarySearchTree {
     private static TreeNode root;
@@ -41,12 +46,22 @@ public class BinarySearchTree {
         inOrder(root.right);
     }
 
+    public static void preOrder(TreeNode root) {
+        if(root == null) return;
+
+        System.out.print(root.val + " ");
+        preOrder(root.left);
+        preOrder(root.right);
+    }
+
     public static void main(String[] args) {
         insert(5);
-        insert(4);
+        insert(3);
         insert(6);
         insert(2);
-        insert(3);
+        insert(4);
         insert(7);
+        insert(8);
+        insert(9);
     }
 }
