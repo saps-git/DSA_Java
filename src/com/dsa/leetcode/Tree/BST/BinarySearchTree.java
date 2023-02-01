@@ -6,6 +6,8 @@ import static com.dsa.leetcode.Tree.BST.ValidateBT.*;
 import static com.dsa.leetcode.Tree.BST.KthSmallest.*;
 import static com.dsa.leetcode.Tree.BST.KthLargest.*;
 import static com.dsa.leetcode.Tree.BST.LCAinBST.*;
+import static com.dsa.leetcode.Tree.BST.BSTfromPreorder.*;
+import static com.dsa.leetcode.Tree.BST.BSTIterator.*;
 
 public class BinarySearchTree {
     private static TreeNode root;
@@ -61,7 +63,5 @@ public class BinarySearchTree {
         insert(2);
         insert(4);
         insert(7);
-        insert(8);
-        insert(9);
     }
 }

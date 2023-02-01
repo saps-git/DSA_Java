@@ -2,6 +2,9 @@ package com.dsa.tree.bst;
 
 import static com.dsa.tree.bst.Ciel.*;
 import static com.dsa.tree.bst.Floor.*;
+import static com.dsa.tree.bst.InorderSuccessor.*;
+import static com.dsa.tree.bst.InorderPredecessor.*;
+
 
 public class BinarySearchTree {
     private static TreeNode root;
@@ -44,10 +47,10 @@ public class BinarySearchTree {
 
     public static void main(String[] args) {
         insert(5);
+        insert(3);
         insert(4);
         insert(7);
         insert(2);
-        insert(3);
         insert(6);
     }
 }
