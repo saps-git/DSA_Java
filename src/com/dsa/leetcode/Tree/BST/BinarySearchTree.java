@@ -8,6 +8,7 @@ import static com.dsa.leetcode.Tree.BST.KthLargest.*;
 import static com.dsa.leetcode.Tree.BST.LCAinBST.*;
 import static com.dsa.leetcode.Tree.BST.BSTfromPreorder.*;
 import static com.dsa.leetcode.Tree.BST.BSTIterator.*;
+import static com.dsa.leetcode.Tree.BST.TwoSum4.*;
 
 public class BinarySearchTree {
     private static TreeNode root;
@@ -63,5 +64,7 @@ public class BinarySearchTree {
         insert(2);
         insert(4);
         insert(7);
+
+        System.out.println(findTarget(root, 11));
     }
 }
