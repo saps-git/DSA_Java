@@ -65,6 +65,6 @@ public class BinarySearchTree {
         insert(4);
         insert(7);
 
-        System.out.println(findTarget(root, 11));
+
     }
 }
