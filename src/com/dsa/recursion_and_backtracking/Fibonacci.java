@@ -6,14 +6,8 @@ public class Fibonacci {
 
 		return fibonacciNonOpt(n-1) + fibonacciNonOpt(n-2); 
 	}
-	
-	//TODO: needs to be done later
-//	public static int fibonacciOpt(int n, HashMap<Integer, Integer> mp){
-//
-//	}
 
 	public static void main(String[] args) {
 		System.out.println(fibonacciNonOpt(10));
-		//System.out.println(fibonacciOpt(10));
 	}
 }
