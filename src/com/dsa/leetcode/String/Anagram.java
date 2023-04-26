@@ -6,7 +6,7 @@ public class Anagram {
     public static boolean isAnagram(String s, String t) {
         if(s.length() != t.length()) return false;
 
-        char[] buffer = new char[26];
+        int[] buffer = new int[26];
         for(int i=0;i<=s.length()-1;i++) {
             buffer[s.charAt(i) - 'a']++;
             buffer[t.charAt(i) - 'a']--;

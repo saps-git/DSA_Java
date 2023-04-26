@@ -7,6 +7,8 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
+// Each element in the result must appear as many times as it shows in both arrays
+
 public class IntersectionofArray2 {
     public static int[] intersect(int[] arr1, int[] arr2) {
         HashMap<Integer, Integer> map = new HashMap<>();

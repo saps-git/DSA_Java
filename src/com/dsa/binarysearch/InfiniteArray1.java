@@ -1,5 +1,7 @@
 package com.dsa.binarysearch;
 
+//Find the first 1 in an array of only 0's & 1's
+
 public class InfiniteArray1 {
     public static int infinite(int[] nums) {
         int low = 0, high = 1;

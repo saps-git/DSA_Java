@@ -3,7 +3,6 @@ package com.dsa.binarysearch;
 //When you don't know if it is ascending or descending sorted.
 
 public class OrderAgnostincBS {
-
     public static int binarySearch(int[] nums, int target){
         int start = 0, end = nums.length-1;
         boolean isAsc = nums[start] < nums[end]; //checking if it is Ascending or Descending
