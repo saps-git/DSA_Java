@@ -1,4 +1,4 @@
-package com.dsa.leetcode;
+package com.dsa.leetcode.Miscellaneous;
 
 //Leetcode-1492
 

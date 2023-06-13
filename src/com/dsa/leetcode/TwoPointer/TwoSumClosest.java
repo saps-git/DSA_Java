@@ -1,4 +1,4 @@
-package com.dsa;
+package com.dsa.leetcode.TwoPointer;
 
 import java.util.Arrays;
 
